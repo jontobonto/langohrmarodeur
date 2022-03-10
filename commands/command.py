@@ -84,6 +84,11 @@ class Commands(commands.Cog):
             f"🐰 Hier findest du die Sozialen Kanäle des Clans.", view=view
         )
 
+    # @slashcommands.command()
+    # @slashcommands.guilds(900793586898067476)
+    async def season(self, interaction: discord.Interaction):
+        """Informationen zur aktuellen Season."""
+        pass
 
 def setup(bot):
     bot.add_cog(Commands(bot))
