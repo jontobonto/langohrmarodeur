@@ -6,10 +6,6 @@ class Langohrmarodeur(commands.Bot):
     def __init__(self, command_prefix: str, intents: discord.Intents):
         super().__init__(command_prefix, intents=intents)
 
-class Langohrmarodeur(discord.Bot):
-    def __init__(self, intents):
-
-        commands.Bot.__init__(self, )
         self.on_ready_has_run: bool = False
 
         self.logger = logging.getLogger("main")
