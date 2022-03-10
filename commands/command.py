@@ -1,14 +1,19 @@
 import discord
 from config.config import Color, Config
 from discord.ext import commands
+from discord import app_commands as slashcommands
 
 
 class Commands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    async def sng(self, ctx: discord.ApplicationContext, user: discord.Member = None):
-        """Informationen über die Spielersuche auf dem Server"""
+    @slashcommands.command()
+    @slashcommands.guilds(900793586898067476)
+    async def sng(self, interaction: discord.Interaction, user: discord.Member = None):
+        """Informationen über die Spielersuche auf dem Server."""
+        # await interaction.response.defer()
+
         view = discord.ui.View()
         view.add_item(
             discord.ui.Button(
@@ -36,15 +41,18 @@ class Commands(commands.Cog):
         )
 
         if user:
-            return await ctx.respond(
-                f"🐰 Du sucht Mitspieler? Hier wirst du fündig! {user.mention}",
+            return await interaction.response.send_message(
+                f"🐰 Du suchst Mitspieler? Hier wirst du fündig! {user.mention}",
                 view=view,
             )
 
-        await ctx.respond(f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view)
+        await interaction.response.send_message(f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view)
 
-    async def social(self, ctx: discord.ApplicationContext):
-        """Informationen über die Sozialen Kanäle des Clans"""
+
+    @slashcommands.command()
+    @slashcommands.guilds(900793586898067476)
+    async def socials(self, interaction: discord.Interaction):
+        """Informationen über die Sozialen Kanäle des Clans."""
         view = discord.ui.View()
         view.add_item(
             discord.ui.Button(
@@ -65,7 +73,7 @@ class Commands(commands.Cog):
             )
         )
 
-        await ctx.respond(
+        await interaction.response.send_message(
             f"🐰 Hier findest du die Sozialen Kanäle des Clans.", view=view
         )
 

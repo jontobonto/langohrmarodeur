@@ -7,7 +7,7 @@ class StatusTask(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
         self.season_1_end: datetime.datetime = datetime.datetime(
-            2022, 3, 19, 7, 0, 0, tzinfo=datetime.timezone.utc
+            2022, 3, 19, 8, 0, 0, tzinfo=datetime.timezone.utc
         )
         self.status.start()
 
