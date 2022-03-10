@@ -4,7 +4,12 @@ import logging
 
 
 class Langohrmarodeur(commands.Bot):
-    def __init__(self, command_prefix: str, activity: discord.BaseActivity, intents: discord.Intents):
+    def __init__(
+        self,
+        command_prefix: str,
+        activity: discord.BaseActivity,
+        intents: discord.Intents,
+    ):
         super().__init__(command_prefix, activity=activity, intents=intents)
 
         self.on_ready_has_run: bool = False

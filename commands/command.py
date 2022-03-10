@@ -46,8 +46,9 @@ class Commands(commands.Cog):
                 view=view,
             )
 
-        await interaction.response.send_message(f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view)
-
+        await interaction.response.send_message(
+            f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view
+        )
 
     @slashcommands.command()
     @slashcommands.guilds(900793586898067476)
