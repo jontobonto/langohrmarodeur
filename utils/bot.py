@@ -22,7 +22,7 @@ class Langohrmarodeur(commands.Bot):
 
     async def on_connect(self):
         commands = await self.tree.sync(guild=self.commands_guild)
-        print([n.name for n in commands])
+        self.logger.info([n.name for n in commands])
 
     async def on_ready(self):
         if self.on_ready_has_run:
@@ -31,4 +31,4 @@ class Langohrmarodeur(commands.Bot):
         self.on_ready_run = True
         self.dispatch("startup")
 
-        print(f"\nLogged in as {self.user}\nID: {self.user.id}")
+        self.logger.info(f"\nLogged in as {self.user}\nID: {self.user.id}")
