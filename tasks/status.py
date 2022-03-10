@@ -2,10 +2,13 @@ import discord
 from discord.ext import commands, tasks
 import datetime
 
+
 class StatusTask(commands.Cog):
     def __init__(self, bot):
         self.bot: commands.Bot = bot
-        self.season_1_end: datetime.datetime = datetime.datetime(2022, 3, 19, 7, 0, 0, tzinfo=datetime.timezone.utc)
+        self.season_1_end: datetime.datetime = datetime.datetime(
+            2022, 3, 19, 7, 0, 0, tzinfo=datetime.timezone.utc
+        )
         self.status.start()
 
     def cog_unload(self):
@@ -13,8 +16,12 @@ class StatusTask(commands.Cog):
 
     @tasks.loop(minutes=1)
     async def status(self):
-        time_until_end = self.season_1_end - datetime.datetime.now(datetime.timezone.utc)
-        seconds_until_end = (time_until_end.days * 24 * 60 * 60) + time_until_end.seconds
+        time_until_end = self.season_1_end - datetime.datetime.now(
+            datetime.timezone.utc
+        )
+        seconds_until_end = (
+            time_until_end.days * 24 * 60 * 60
+        ) + time_until_end.seconds
         mins, secs = divmod(seconds_until_end, 60)
         hours, mins = divmod(mins, 60)
         days, hours = divmod(hours, 24)
@@ -38,6 +45,7 @@ class StatusTask(commands.Cog):
     @status.before_loop
     async def before_printer(self):
         await self.bot.wait_until_ready()
+
 
 def setup(bot):
     bot.add_cog(StatusTask(bot))

@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import logging
 
+
 class Langohrmarodeur(commands.Bot):
     def __init__(self, command_prefix: str, intents: discord.Intents):
         super().__init__(command_prefix, intents=intents)
@@ -11,7 +12,6 @@ class Langohrmarodeur(commands.Bot):
         self.logger = logging.getLogger("main")
         self.logger.setLevel(logging.DEBUG)
         self.logger.addHandler(logging.StreamHandler())
-
 
     async def on_ready(self):
         if self.on_ready_has_run:

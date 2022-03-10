@@ -2,7 +2,8 @@ from typing import Type, TypeVar
 
 import discord
 
-CT = TypeVar('CT', bound='Color')
+CT = TypeVar("CT", bound="Color")
+
 
 class Color(discord.Color):
     @classmethod
