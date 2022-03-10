@@ -90,5 +90,6 @@ class Commands(commands.Cog):
         """Informationen zur aktuellen Season."""
         pass
 
+
 def setup(bot):
     bot.add_cog(Commands(bot))
