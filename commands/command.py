@@ -46,8 +46,9 @@ class Commands(commands.Cog):
                 view=view,
             )
 
-        await interaction.response.send_message(f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view)
-
+        await interaction.response.send_message(
+            f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view
+        )
 
     @slashcommands.command()
     @slashcommands.guilds(900793586898067476)
@@ -63,6 +64,12 @@ class Commands(commands.Cog):
             discord.ui.Button(
                 label="Youtube",
                 url="https://www.youtube.com/channel/UCFZY8wpz6h6Y_q3bH8yvjLA",
+            )
+        )
+        view.add_item(
+            discord.ui.Button(
+                label="Twitter",
+                url="https://twitter.com/DerHase14",
             )
         )
         view.add_item(
