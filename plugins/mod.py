@@ -1,13 +1,11 @@
 import discord
 from config.config import Color, Config
-from discord.commands import slash_command
 from discord.ext import commands
 
 class Moderation(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @slash_command(guild_ids=[Config.guild_id])
     async def lm(self, 
         ctx: discord.ApplicationContext, 
         member1: discord.Member = None, 
@@ -32,7 +30,8 @@ class Moderation(commands.Cog):
 
         for channel in ctx.guild().text_channels:
             for message in channel.history(limit=None):
-                if message-
+                # if message-
+                pass
 
         await ctx.send_followup(embed=embed)
 

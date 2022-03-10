@@ -1,6 +1,5 @@
 import discord
 from config.config import Color, Config
-from discord.commands import slash_command
 from discord.ext import commands
 
 
@@ -8,7 +7,6 @@ class Commands(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    @slash_command(guild_ids=[Config.guild_id])
     async def sng(self, ctx: discord.ApplicationContext, user: discord.Member = None):
         """Informationen über die Spielersuche auf dem Server"""
         view = discord.ui.View()
@@ -22,7 +20,6 @@ class Commands(commands.Cog):
 
         await ctx.respond(f"🐰 Du suchst Mitspieler? Hier wirst du fündig!", view=view)
 
-    @slash_command(guild_ids=[Config.guild_id])
     async def social(self, ctx: discord.ApplicationContext):
         """Informationen über die Sozialen Kanäle des Clans"""
         view = discord.ui.View()
