@@ -10,7 +10,9 @@ class Commands(commands.Cog):
         self.bot: Langohrmarodeur = bot
 
     async def cog_load(self) -> None:
-        context_menu = app_commands.ContextMenu(name="💡 Suche nach Spielern", callback=self.sng_menu)
+        context_menu = app_commands.ContextMenu(
+            name="💡 Suche nach Spielern", callback=self.sng_menu
+        )
         self.bot.tree.add_command(context_menu)
 
     async def cog_unload(self) -> None:
@@ -21,7 +23,9 @@ class Commands(commands.Cog):
         user="Welches Mitglied soll auf die Kanäle hingewiesen werden? Standard: Niemand"
     )
     @app_commands.rename(user="mitglied")
-    async def sng_command(self, interaction: discord.Interaction, user: discord.Member = None):
+    async def sng_command(
+        self, interaction: discord.Interaction, user: discord.Member = None
+    ):
         """Informationen über die Spielersuche auf dem Server."""
         # await interaction.response.defer()
 
@@ -56,7 +60,9 @@ class Commands(commands.Cog):
         )
 
     # Contextmenü: 💡 Suche nach Spielern
-    async def sng_menu(self, interaction: discord.Interaction, message: discord.Message):
+    async def sng_menu(
+        self, interaction: discord.Interaction, message: discord.Message
+    ):
         """Informationen über die Spielersuche auf dem Server."""
         view = discord.ui.View()
         view.add_item(
@@ -65,10 +71,12 @@ class Commands(commands.Cog):
                 url="https://discord.com/channels/900793586898067476/920625156500635659/",
             )
         )
-        view.add_item(discord.ui.Button(
+        view.add_item(
+            discord.ui.Button(
                 label="Rette die Welt",
                 url="https://discord.com/channels/900793586898067476/922479435792392252/",
-            ))
+            )
+        )
         view.add_item(
             discord.ui.Button(
                 label="Kreativ",
@@ -77,7 +85,8 @@ class Commands(commands.Cog):
         )
 
         await interaction.response.send_message(
-            f"🐰 Du suchst Mitspieler? Hier wirst du fündig! {message.author.mention}", view=view
+            f"🐰 Du suchst Mitspieler? Hier wirst du fündig! {message.author.mention}",
+            view=view,
         )
 
     @app_commands.command()
