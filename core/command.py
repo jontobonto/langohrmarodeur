@@ -33,19 +33,19 @@ class Commands(commands.Cog):
         view.add_item(
             discord.ui.Button(
                 label="Battle Royale",
-                url="https://discord.com/channels/900793586898067476/920625156500635659/",
+                url="https://discord.com/channels/900793586898067476/1036987294718111814/",
             )
         )
         view.add_item(
             discord.ui.Button(
                 label="Rette die Welt",
-                url="https://discord.com/channels/900793586898067476/922479435792392252/",
+                url="https://discord.com/channels/900793586898067476/1036987325428801576/",
             )
         )
         view.add_item(
             discord.ui.Button(
                 label="Kreativ",
-                url="https://discord.com/channels/900793586898067476/920625240734838784/",
+                url="https://discord.com/channels/900793586898067476/1093575348907688136/",
             )
         )
 
@@ -68,19 +68,19 @@ class Commands(commands.Cog):
         view.add_item(
             discord.ui.Button(
                 label="Battle Royale",
-                url="https://discord.com/channels/900793586898067476/920625156500635659/",
+                url="https://discord.com/channels/900793586898067476/1036987294718111814/",
             )
         )
         view.add_item(
             discord.ui.Button(
                 label="Rette die Welt",
-                url="https://discord.com/channels/900793586898067476/922479435792392252/",
+                url="https://discord.com/channels/900793586898067476/1036987325428801576/",
             )
         )
         view.add_item(
             discord.ui.Button(
                 label="Kreativ",
-                url="https://discord.com/channels/900793586898067476/920625240734838784/",
+                url="https://discord.com/channels/900793586898067476/1093575348907688136/",
             )
         )
 
